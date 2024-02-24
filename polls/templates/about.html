@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg text-white" style="background-color: rgb(48, 63, 159, 0.9);">
+        <div class="container-fluid " >
+          <a class="navbar-brand text-white" href="../">Elegant.</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ms-auto p-2 gap-3 ">
+            <li class="nav-item"><a href="../" class="nav-link text-white">Home</a></li>
+            <li class="nav-item"><a href="" class="nav-link text-white">About</a></li>
+            <li class="nav-item"><a href="../contact" class="nav-link text-white">Contact</a></li>
+            <li class="nav-item"><a href="../products" class="nav-link text-white">Product</a></li>
+           </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- about section -->
+
+      <div id="carouselExampleDark" class="carousel carousel-dark slide" >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+
+          {% for about_con in about%}
+
+          <div class="carousel-item active" data-bs-interval="10000" style="max-height: 80vh; text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);">
+            <img src="{{about_con.image.url}}" alt="" class="d-block w-100">
+            <div class="carousel-caption  d-md-block text-light">
+              <h2>{{about_con.about_title}}</h1>
+              <p>{{about_con.about_dis}}</p>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+
+
+
+      <footer class="bg-dark text-light py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <h5>Contact Us</h5>
+              <p>Email: melakeltsegaye@gmail.com</p>
+              <p>Phone: +(251)901914573</p>
+              <p>Address: Bole , A.A, Ethiopia</p>
+            </div>
+            <div class="col-lg-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a class="nav-link text-primary" href="../">Home</a></li>
+                <li><a class="nav-link text-primary" href="">About Us</a></li>
+                <li><a class="nav-link text-primary" href="../products">Products</a></li>
+                <li><a class="nav-link text-primary" href="../contact">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <h5>Connect With Us</h5>
+              <ul class="list-unstyled">
+                <li><a class="nav-link text-primary" href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a class="nav-link text-primary" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a class="nav-link text-primary" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a class="nav-link text-primary" href="#"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p>&copy; 2024 Elegant. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
